@@ -11,6 +11,8 @@ import LogisticManagement from '../pages/LogisticManagement'
 import Analytics from '../pages/Analytics'
 import { useAuth0 } from "@auth0/auth0-react";
 import RUBEN from '../pages/test';
+import VolunteerRoles from '../pages/VolunteerRoles';
+import Locations from '../pages/Locations';
 
 const Router = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -33,6 +35,8 @@ const Router = () => {
           <Route path='/donation_requests' element={<DonationRequests />} />
           <Route path='/logistic_management' element={<LogisticManagement />} />
           <Route path='/analytics' element={<Analytics />} />
+          <Route path='/add_location' element={<Locations />} />
+          <Route path='/add_volunter_roles' element={<VolunteerRoles />} />
           <Route path='/test' element={<RUBEN />} />
         </Routes>
       </BrowserRouter>

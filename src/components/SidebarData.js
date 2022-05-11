@@ -47,6 +47,18 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+        title: 'Add location',
+        path: '/add_location',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Add volunteer roles',
+        path: '/add_volunter_roles',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Test',
         path: '/test',
         icon: <IoIcons.IoMdPeople />,

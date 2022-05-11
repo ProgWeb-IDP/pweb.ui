@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
+import {Button, ButtonToolbar} from 'react-bootstrap';
+import {AddUserModal} from '../modals/AddUserModal';
 
 class RUBEN extends Component {
     constructor(props) {
         super(props)
-        this.state={users:[]}
+        this.state={users:[]/*, addModalShow: false*/}
     }
 
     refreshList(){
@@ -26,11 +28,9 @@ class RUBEN extends Component {
     render() {
 
         const {users}=this.state;
-        console.log("state");
-        console.log(this.state);
+        let addModalClose=() => this.setState({addModalShow:false});
         return (
             <div className='test_class'>
-
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                         <thread>
@@ -52,8 +52,13 @@ class RUBEN extends Component {
                             }
                         </tbody>
                     </Table>
+                    <ButtonToolbar>
+                        <Button variant='primary' onClick={() => this.setState({addModalShow:true})}>
+                            Add user
+                        </Button>
+                        <AddUserModal show={this.state.addModalShow} onHide={addModalClose}/>
+                    </ButtonToolbar>
                 </div>
-                
             </div>
         );
         
