@@ -35,8 +35,8 @@ const Router = () => {
           <Route path='/donation_requests' element={<DonationRequests />} />
           <Route path='/logistic_management' element={<LogisticManagement />} />
           <Route path='/analytics' element={<Analytics />} />
-          <Route path='/add_location' element={<Locations />} />
-          <Route path='/add_volunter_roles' element={<VolunteerRoles />} />
+          <Route path='/locations' element={<Locations />} />
+          <Route path='/volunteer_roles' element={<VolunteerRoles />} />
           <Route path='/test' element={<RUBEN />} />
         </Routes>
       </BrowserRouter>

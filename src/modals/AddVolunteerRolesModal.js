@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Modal,Button, Row, Col, Form} from 'react-bootstrap';
 
-export class AddUserModal extends Component {
+export class AddVolunteerRolesModal extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -9,15 +9,15 @@ export class AddUserModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch(process.env.REACT_APP_API + 'users', {
+        fetch(process.env.REACT_APP_API + 'volunteerroles', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                firstName:event.target.firstName.value,
-                lastName:event.target.lastName.value
+                roleName:event.target.roleName.value,
+                shortDescription:event.target.shortDescription.value
             })
         })
         .then(result => result.json())
@@ -25,7 +25,7 @@ export class AddUserModal extends Component {
             alert(result);
         },
         (error) => {
-            alert("Failed to add a user.");
+            alert("Failed to add a volunteer role.");
         })
     }
 
@@ -40,24 +40,24 @@ export class AddUserModal extends Component {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Add user
+                            Add volunteer role
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                    <Form.Group controlId="firstName">
-                                        <Form.Label>firstName</Form.Label>
-                                        <Form.Control type="text" name="firstName" required placeholder="first name"/>
+                                    <Form.Group controlId="roleName">
+                                        <Form.Label>roleName</Form.Label>
+                                        <Form.Control type="text" name="roleName" required placeholder="role name"/>
                                     </Form.Group>
-                                    <Form.Group controlId="lastName">
-                                        <Form.Label>lastName</Form.Label>
-                                        <Form.Control type="text" name="lastName" required placeholder="last name"/>
+                                    <Form.Group controlId="roleName">
+                                        <Form.Label>Short description</Form.Label>
+                                        <Form.Control type="text" name="shortDescription" required placeholder="Add a short description"/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit">
-                                            Add user
+                                            Add volunteer role
                                         </Button>
                                     </Form.Group>
                                 </Form>

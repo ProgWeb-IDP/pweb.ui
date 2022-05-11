@@ -6,7 +6,7 @@ import {AddUserModal} from '../modals/AddUserModal';
 class RUBEN extends Component {
     constructor(props) {
         super(props)
-        this.state={users:[]/*, addModalShow: false*/}
+        this.state={users:[], addModalShow: false}
     }
 
     refreshList(){

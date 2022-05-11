@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Modal,Button, Row, Col, Form} from 'react-bootstrap';
 
-export class AddUserModal extends Component {
+export class AddLocationModal extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -9,15 +9,14 @@ export class AddUserModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch(process.env.REACT_APP_API + 'users', {
+        fetch(process.env.REACT_APP_API + 'locations', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                firstName:event.target.firstName.value,
-                lastName:event.target.lastName.value
+                locationName:event.target.locationName.value
             })
         })
         .then(result => result.json())
@@ -25,7 +24,7 @@ export class AddUserModal extends Component {
             alert(result);
         },
         (error) => {
-            alert("Failed to add a user.");
+            alert("Failed to add a location.");
         })
     }
 
@@ -40,24 +39,20 @@ export class AddUserModal extends Component {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Add user
+                            Add location
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                    <Form.Group controlId="firstName">
-                                        <Form.Label>firstName</Form.Label>
-                                        <Form.Control type="text" name="firstName" required placeholder="first name"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="lastName">
-                                        <Form.Label>lastName</Form.Label>
-                                        <Form.Control type="text" name="lastName" required placeholder="last name"/>
+                                    <Form.Group controlId="locationName">
+                                        <Form.Label>locationName</Form.Label>
+                                        <Form.Control type="text" name="locationName" required placeholder="location name"/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit">
-                                            Add user
+                                            Add location
                                         </Button>
                                     </Form.Group>
                                 </Form>

@@ -47,14 +47,14 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Add location',
-        path: '/add_location',
+        title: 'Locations',
+        path: '/locations',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
-        title: 'Add volunteer roles',
-        path: '/add_volunter_roles',
+        title: 'Volunteer roles',
+        path: '/volunteer_roles',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
