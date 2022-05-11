@@ -7,8 +7,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Avatar from "react-avatar";
 
 function Navbar() {
-    const [sidebar, setSidebar] = useState(false)
-    const showSidebar = () => setSidebar(!sidebar)
     const { logout, user } = useAuth0();
 
     return (
@@ -19,14 +17,18 @@ function Navbar() {
                 </div>
                 <div className="userInfo">
                     <Avatar name={user.nickname} round="100px" size="50px" />   
-                    <Link
+                    <div className="signOut_button">
+                    <Link style={{textDecoration: 'none'}}
                         to="/"
                         onClick={() => {
                         logout({ returnTo: window.location.origin });
                         }}
                     >
-                    Sign out
+                    <font face="Verdana" color="white">
+                    SIGN OUT
+                    </font>
                     </Link>
+                    </div>
                 </div>
             </div>
             <nav className='nav-menu'>

@@ -46,5 +46,11 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    {
+        title: 'Test',
+        path: '/test',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
 
 ]

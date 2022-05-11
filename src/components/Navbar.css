@@ -20,11 +20,26 @@
 }
 
 .userInfo{
-    background-color: blue;
     width: 200px;
     height:100px;
     right: 0;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signOut_button {
+    margin-left: 8px;
+    background-color: rgb(224, 74, 28);
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #222;
+}
+
+.signOut_button:hover {
+    background-color: rgb(182, 53, 13);
 }
 
 .nav-menu {
