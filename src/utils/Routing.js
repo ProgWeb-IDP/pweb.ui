@@ -10,9 +10,10 @@ import DonationRequests from '../pages/DonationRequests'
 import LogisticManagement from '../pages/LogisticManagement'
 import Analytics from '../pages/Analytics'
 import { useAuth0 } from "@auth0/auth0-react";
-import RUBEN from '../pages/test';
+import TEST from '../pages/test';
 import VolunteerRoles from '../pages/VolunteerRoles';
 import Locations from '../pages/Locations';
+import LEAVE from '../pages/SignOut';
 
 const Router = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -26,7 +27,7 @@ const Router = () => {
   return (
     isAuthenticated && ( 
       <BrowserRouter>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path='/administrators' element={<Administrators />} />
           <Route path='/users' element={<Users />} />
@@ -37,7 +38,8 @@ const Router = () => {
           <Route path='/analytics' element={<Analytics />} />
           <Route path='/locations' element={<Locations />} />
           <Route path='/volunteer_roles' element={<VolunteerRoles />} />
-          <Route path='/test' element={<RUBEN />} />
+          <Route path='/test' element={<TEST />} />
+          <Route path='/sign_out' element={<LEAVE />} />
         </Routes>
       </BrowserRouter>
     )

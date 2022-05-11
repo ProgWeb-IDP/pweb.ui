@@ -64,5 +64,10 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    {
+        title: 'SIGN OUT',
+        path: '/sign_out',
+        cName: 'nav-text'
+    },
 
 ]

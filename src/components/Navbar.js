@@ -13,11 +13,10 @@ function Navbar() {
         <>
             <IconContext.Provider value={{color: '#fff'}}>
             <div className="navbar">
-                <div className="logo">
-                </div>
+                <div className="logo"> </div>
                 <div className="userInfo">
                     <Avatar name={user.nickname} round="100px" size="50px" />   
-                    <div className="signOut_button">
+                    {/* <div className="signOut_button">
                     <Link style={{textDecoration: 'none'}}
                         to="/"
                         onClick={() => {
@@ -28,7 +27,7 @@ function Navbar() {
                     SIGN OUT
                     </font>
                     </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <nav className='nav-menu'>
