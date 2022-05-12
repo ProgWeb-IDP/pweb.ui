@@ -55,10 +55,10 @@ class Profile extends Component {
             <div className='test_class'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
-                        <thread>
                             <tr>
                                 <th>First name</th>
                                 <th>Last name</th>
+                                <th>Auth CODE</th>
                                 <th>Birth date</th>
                                 <th>Gender</th>
                                 <th>Phone number</th>
@@ -68,13 +68,13 @@ class Profile extends Component {
                                 <th>Address</th>
                                 <th>ZIP code</th>
                             </tr>
-                        </thread>
                         <tbody>
                             {
                                 account.map(details =>
                                     <tr>
                                         <td>{details.firstName}</td>
                                         <td>{details.lastName}</td>
+                                        <td>{details.authToken}</td>
                                         <td>{details.birthDate}</td>
                                         <td>{details.gender}</td>
                                         <td>{details.phoneNumber}</td>

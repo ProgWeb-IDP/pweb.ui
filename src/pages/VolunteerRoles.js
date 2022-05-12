@@ -33,13 +33,11 @@ class VolunteerRoles extends Component {
             <div className='test_class'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
-                        <thread>
                             <tr>
                                 <th>volunteerRoleId</th>
                                 <th>volunteerRoleName</th>
                                 <th>shortDescription</th>
                             </tr>
-                        </thread>
                         <tbody>
                             {
                                 roles.map(role =>

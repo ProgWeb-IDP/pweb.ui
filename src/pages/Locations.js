@@ -33,12 +33,10 @@ class Locations extends Component {
             <div className='test_class'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
-                        <thread>
                             <tr>
                                 <th>locationId</th>
                                 <th>locationName</th>
                             </tr>
-                        </thread>
                         <tbody>
                             {
                                 locations.map(location =>
