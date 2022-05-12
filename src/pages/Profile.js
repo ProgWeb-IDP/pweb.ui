@@ -1,29 +1,8 @@
-// import React, {Component} from 'react';
-
-// function Profile() {
-//     return (
-//         // <div className='Profile'>
-//         //     <h1>Profile</h1>
-//         // </div>
-//         <div className='test_class'>
-//             <form>
-//             <label htmlFor="name">Name:</label>
-//             <input type="text" name="name" />
-//             <label htmlFor="age">Age:</label>
-//             <input type="text" name="age" />
-//             <input type="submit" value="submit" />
-//             </form>
-//         </div>
-//     );
-// }
-
-// export default Profile;
-
-
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 import AddProfileModal from '../modals/AddProfileModal';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class Profile extends Component {
     constructor(props) {
@@ -48,8 +27,13 @@ class Profile extends Component {
     }
 
     render() {
-
+        const {user}=this.props.auth0;
+        var token = user.sub;
         const {account}=this.state;
+        let currentUser;
+        account.map(details => {if (details.authToken === token) {currentUser = details}})
+        console.log("Mare fail")
+        console.log(currentUser)
         let addModalClose=() => this.setState({addModalShow:false});
         return (
             <div className='test_class'>
@@ -70,20 +54,20 @@ class Profile extends Component {
                             </tr>
                         <tbody>
                             {
-                                account.map(details =>
-                                    <tr>
-                                        <td>{details.firstName}</td>
-                                        <td>{details.lastName}</td>
-                                        <td>{details.authToken}</td>
-                                        <td>{details.birthDate}</td>
-                                        <td>{details.gender}</td>
-                                        <td>{details.phoneNumber}</td>
-                                        <td>{details.country}</td>
-                                        <td>{details.city}</td>
-                                        <td>{details.street}</td> 
-                                        <td>{details.address}</td>
-                                        <td>{details.zipCode}</td>
-                                    </tr>
+                                account.map(details => 
+                                        <tr>
+                                            <td>{details.firstName}</td>
+                                            <td>{details.lastName}</td>
+                                            <td>{details.authToken}</td>
+                                            <td>{details.birthDate}</td>
+                                            <td>{details.gender}</td>
+                                            <td>{details.phoneNumber}</td>
+                                            <td>{details.country}</td>
+                                            <td>{details.city}</td>
+                                            <td>{details.street}</td> 
+                                            <td>{details.address}</td>
+                                            <td>{details.zipCode}</td>
+                                        </tr>
                                     )
                             }
                         </tbody>
@@ -100,4 +84,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default withAuth0(Profile);
