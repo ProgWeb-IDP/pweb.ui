@@ -14,6 +14,7 @@ import TEST from '../pages/test';
 import VolunteerRoles from '../pages/VolunteerRoles';
 import Locations from '../pages/Locations';
 import LEAVE from '../pages/SignOut';
+import Profile from '../pages/Profile';
 
 const Router = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -29,6 +30,7 @@ const Router = () => {
       <BrowserRouter>
         <Navbar/>
         <Routes>
+          <Route path='/profile' element={<Profile />} />
           <Route path='/administrators' element={<Administrators />} />
           <Route path='/users' element={<Users />} />
           <Route path='/volunteers' element={<Volunteers />} />

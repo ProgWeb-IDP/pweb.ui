@@ -59,7 +59,6 @@ class Locations extends Component {
                 </div>
             </div>
         );
-        
     }
 }
 

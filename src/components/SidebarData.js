@@ -5,6 +5,12 @@ import * as IoIcons from 'react-icons/io';
 
 export const SidebarData = [
     {
+        title: 'Profile',
+        path: '/profile',
+        icon: <FaIcons.FaCartPlus />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Administrators',
         path: '/administrators',
         icon: <FaIcons.FaCartPlus />,

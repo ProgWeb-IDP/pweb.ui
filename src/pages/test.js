@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Table} from 'react-bootstrap';
-import {Button, ButtonToolbar} from 'react-bootstrap';
-import {AddUserModal} from '../modals/AddUserModal';
+// import {Table} from 'react-bootstrap';
+// import {Button, ButtonToolbar} from 'react-bootstrap';
+// import {AddUserModal} from '../modals/AddUserModal';
 
 // class TEST extends Component {
 //     constructor(props) {
@@ -72,7 +72,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 function TEST() {
     const { logout, user } = useAuth0();
     console.log('Acesta este user')
-    console.log(user)
+    console.log(user.sub)
     return (    
     <span>Nothing</span>
     );

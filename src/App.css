@@ -5,7 +5,7 @@
   font-family: "Trebuchet MS";
 }
 
-.administrators, .users, .volunteers, .volunteer_applications, .donation_requests, .logistic_management, .analytics, .Locations, .VolunteerRoles{
+.administrators, .users, .volunteers, .volunteer_applications, .donation_requests, .logistic_management, .analytics, .Locations, .VolunteerRoles, .Profile{
   display: flex;
   height: 100vh;
   align-items: center;
