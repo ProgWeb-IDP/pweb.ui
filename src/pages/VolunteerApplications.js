@@ -1,11 +1,69 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Table} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
-function VolunteerApplications() {
-    return (
-        <div className='volunteer_applications'>
-            <h1>Volunteer Applications</h1>
-        </div>
-    );
+const myData = {
+    name:"test"
+}
+console.log(myData)
+
+class VolunteerApplications extends Component {
+    constructor(props) {
+        super(props)
+        this.state={volunteerApplications:[]}
+    }
+
+    refreshList(){
+        fetch(process.env.REACT_APP_API + 'volunteerApplication')
+        .then(response => response.json())
+        .then(data => {
+            this.setState({volunteerApplications:data})
+        });
+    }
+
+    componentDidMount() {
+        this.refreshList();
+    }
+
+    componentDidUpdate() {
+        this.refreshList();
+    }
+
+    render() {
+
+        const {volunteerApplications}=this.state;
+        return (
+            <div className='volunteer_applications'>
+                <div>
+                    <Table className="mt-4" striped border hover size="sm">
+                            <tr>
+                                <th>Application ID</th>
+                                <th>User first name</th>
+                                <th>User last name</th>
+                                <th>Options</th>
+                            </tr>
+                        <tbody>
+                            {
+                                volunteerApplications.map(app =>
+                                    <tr>
+                                        <td>{app.applicationId}</td>
+                                        <td>{app.firstName}</td>
+                                        <td>{app.lastName}</td>
+                                        <td>
+                                        <Link to={'/view_volunteer_app/' + app.applicationId}>
+                                            <span>View application</span>
+                                        </Link>
+
+                                        </td>
+                                    </tr>
+                                    )
+                            }
+                        </tbody>
+                    </Table>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default VolunteerApplications;

@@ -6,6 +6,7 @@ import Administrators from '../pages/Administrators'
 import Users from '../pages/Users'
 import Volunteers from '../pages/Volunteers'
 import VolunteerApplications from '../pages/VolunteerApplications'
+import ViewVolunteerApp from '../pages/ViewVolunteerApp'
 import DonationRequests from '../pages/DonationRequests'
 import LogisticManagement from '../pages/LogisticManagement'
 import Analytics from '../pages/Analytics'
@@ -35,6 +36,7 @@ const Router = () => {
           <Route path='/users' element={<Users />} />
           <Route path='/volunteers' element={<Volunteers />} />
           <Route path='/volunteer_applications' element={<VolunteerApplications />} />
+          <Route path='/view_volunteer_app/:app_id' element={<ViewVolunteerApp />} />
           <Route path='/donation_requests' element={<DonationRequests />} />
           <Route path='/logistic_management' element={<LogisticManagement />} />
           <Route path='/analytics' element={<Analytics />} />

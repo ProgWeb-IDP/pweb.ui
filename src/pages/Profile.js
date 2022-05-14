@@ -30,13 +30,9 @@ class Profile extends Component {
         const {user}=this.props.auth0;
         var token = user.sub;
         const {account}=this.state;
-        let currentUser;
-        account.map(details => {if (details.authToken === token) {currentUser = details}})
-        console.log("Mare fail")
-        console.log(currentUser)
         let addModalClose=() => this.setState({addModalShow:false});
         return (
-            <div className='test_class'>
+            <div className='profile'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>

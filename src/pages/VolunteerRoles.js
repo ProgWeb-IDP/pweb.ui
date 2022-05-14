@@ -30,7 +30,7 @@ class VolunteerRoles extends Component {
         const {roles}=this.state;
         let addModalClose=() => this.setState({addModalShow:false});
         return (
-            <div className='test_class'>
+            <div className='volunteer_roles'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>

@@ -30,7 +30,7 @@ class Locations extends Component {
         const {locations}=this.state;
         let addModalClose=() => this.setState({addModalShow:false});
         return (
-            <div className='test_class'>
+            <div className='locations'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
