@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import {Button, ButtonToolbar} from 'react-bootstrap';
 
 const myData = {
     name:"test"
@@ -29,6 +30,9 @@ class VolunteerApplications extends Component {
         this.refreshList();
     }
 
+    showApplication(applicationId) {
+        <Link to={'/view_volunteer_app/' + applicationId}></Link>
+    }
     render() {
 
         const {volunteerApplications}=this.state;
@@ -50,9 +54,10 @@ class VolunteerApplications extends Component {
                                         <td>{app.firstName}</td>
                                         <td>{app.lastName}</td>
                                         <td>
-                                        <Link to={'/view_volunteer_app/' + app.applicationId}>
-                                            <span>View application</span>
-                                        </Link>
+
+                                        <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_volunteer_app/' + app.applicationId}></Link> }>
+                                        <Link to={'/view_volunteer_app/' + app.applicationId}>View details</Link>
+                                        </Button>
 
                                         </td>
                                     </tr>

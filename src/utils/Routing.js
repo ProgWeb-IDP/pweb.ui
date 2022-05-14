@@ -38,7 +38,7 @@ const Router = () => {
           <Route path='/volunteer_applications' element={<VolunteerApplications />} />
           <Route path='/view_volunteer_app/:app_id' element={<ViewVolunteerApp />} />
           <Route path='/donation_requests' element={<DonationRequests />} />
-          <Route path='/logistic_management' element={<LogisticManagement />} />
+          {/* <Route path='/logistic_management' element={<LogisticManagement />} /> */}
           <Route path='/analytics' element={<Analytics />} />
           <Route path='/locations' element={<Locations />} />
           <Route path='/volunteer_roles' element={<VolunteerRoles />} />

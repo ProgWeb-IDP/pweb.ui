@@ -1,67 +1,67 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+import * as CgIcons from 'react-icons/cg';
 import * as IoIcons from 'react-icons/io';
 
 export const SidebarData = [
     {
         title: 'Profile',
         path: '/profile',
-        icon: <FaIcons.FaCartPlus />,
+        icon: <CgIcons.CgProfile />,
         cName: 'nav-text'
     },
     {
         title: 'Administrators',
         path: '/administrators',
-        icon: <FaIcons.FaCartPlus />,
+        icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
         title: 'Users',
         path: '/users',
-        icon: <AiIcons.AiFillHome />,
+        icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
         title: 'Volunteers',
         path: '/volunteers',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
         title: 'Volunteer applications',
         path: '/volunteer_applications',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text'
     },
     {
         title: 'Donation requests',
         path: '/donation_requests',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaHandHoldingMedical />,
         cName: 'nav-text'
     },
-    {
-        title: 'Logistic management',
-        path: '/logistic_management',
-        icon: <IoIcons.IoMdPeople />,
-        cName: 'nav-text'
-    },
+    // { Aici voiam sa pun sa vezi locatiile si rolurile
+    //     title: 'Logistic management',
+    //     path: '/logistic_management',
+    //     icon: <IoIcons.IoMdPeople />,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'Analytics',
         path: '/analytics',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaChartBar />,
         cName: 'nav-text'
     },
     {
         title: 'Locations',
         path: '/locations',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaSearchLocation />,
         cName: 'nav-text'
     },
     {
         title: 'Volunteer roles',
         path: '/volunteer_roles',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaIdBadge />,
         cName: 'nav-text'
     },
     {

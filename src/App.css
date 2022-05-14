@@ -14,7 +14,7 @@
   background-color: #bbc;
 }
 
-.test_class, .locations, .volunteer_roles, .profile, .administrators, .volunteers, .volunteer_applications, .view_volunteer_app{
+.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications{
   display: flex;
   height: 100vh;
   align-items: center;
@@ -22,6 +22,21 @@
   font-size: 16px;
   background-color: #bbc;
 }
+
+.volunteers, .administrators{
+  width: 50%;
+  position:absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.view_volunteer_app {
+  width: 70%;
+  position:absolute;
+  top: 30%;
+  left: 45%;
+}
+
 
 th, td{
    padding: 12px 6px;

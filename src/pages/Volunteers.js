@@ -26,7 +26,7 @@ class Volunteers extends Component {
     }
 
     RemoveVolunteer(userID) {
-        fetch(process.env.REACT_APP_API + 'volunteer/' + userID, {method : 'DELETE'})
+        fetch(process.env.REACT_APP_API + 'volunteer/' + userID, {method : 'DELETE'}) /*Nu cred ca ar treubi sa fie delete, ci PUT ca sa fie isVolunteer = 0*/
         .then(result => result.json())
         .then((result) => {
             alert(result);
@@ -34,6 +34,10 @@ class Volunteers extends Component {
         (error) => {
             alert("Failed to remove volunteer!");
         })
+    }
+
+    ChangeRole(userID) {
+
     }
 
     render() {
@@ -45,9 +49,9 @@ class Volunteers extends Component {
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
-                                <th>user Id</th>
-                                <th>firstName</th>
-                                <th>lastName</th>
+                                {/* <th>user Id</th> */}
+                                <th>First name</th>
+                                <th>Last name</th>
                                 <th>Role</th>
                                 <th>Options</th>
                             </tr>
@@ -55,30 +59,29 @@ class Volunteers extends Component {
                             {
                                 volunteers.map(volunteer =>
                                     <tr>
-                                        <td>{volunteer.userId}</td>
+                                        {/* <td>{volunteer.userId}</td> */}
                                         <td>{volunteer.firstName}</td>
                                         <td>{volunteer.lastName}</td>
                                         <td>{volunteer.role}</td>
                                         <td>
-                                            <button onClick={() => this.RemoveVolunteer(volunteer.userId)}>
-                                                Remove volunteer
-                                            </button>
-                                            <button onClick={() => this.RemoveVolunteer(volunteer.userId)}>
+                                        <ButtonToolbar>
+                                            <Button className="mr-2" variant="info" size="sm" onClick={() => this.ChangeRole(volunteer.userId)}>
                                                 Change role #TODO
-                                            </button>
-
-                                            <ButtonToolbar>
+                                            </Button>
+                                            
+                                            <Button className="mr-2" variant="danger" size="sm" onClick={() => this.RemoveVolunteer(volunteer.userId)}>
+                                                Remove volunteer
+                                            </Button>
+                                        </ButtonToolbar>
+                                            {/* <ButtonToolbar>
                                                 <Button variant='primary' onClick={() => this.setState({updateModalShow:true})}>
-                                                Add location
+                                                Add volunteer
                                                 </Button>
                                                 <UpdateRoleModal state={{volunteer_id : volunteer.userId}} show={this.state.updateModalShow} onHide={updateModalClose}/>
-                                            </ButtonToolbar>
-
-
-
+                                            </ButtonToolbar> */}
                                         </td>
                                     </tr>
-                                    )
+                                )
                             }
                         </tbody>
                     </Table>

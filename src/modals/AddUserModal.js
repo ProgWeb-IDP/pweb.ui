@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Modal,Button, Row, Col, Form} from 'react-bootstrap';
 
-export class AddUserModal extends Component {
+class AddUserModal extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -72,3 +72,5 @@ export class AddUserModal extends Component {
         )
     }
 }
+
+export default AddUserModal;
