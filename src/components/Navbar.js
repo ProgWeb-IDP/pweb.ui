@@ -1,9 +1,8 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { SidebarData, AdminSideBarData, VolunteerSideBarData, NormalUserSideBarData} from './SidebarData'
+import { AdminSideBarData, VolunteerSideBarData, NormalUserSideBarData } from './SidebarData'
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import { useAuth0 } from "@auth0/auth0-react";
 import Avatar from "react-avatar";
 import { withAuth0 } from '@auth0/auth0-react';
 
