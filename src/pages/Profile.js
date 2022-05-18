@@ -39,16 +39,16 @@ class Profile extends Component {
                             {
                                 account.map(details => (details.authToken === token) ? (
                                     <div>
-                                        <tr><th>First name</th> <td>{details.firstName}</td></tr>
-                                        <tr><th>Last name</th> <td>{details.lastName}</td></tr>
-                                        <tr><th>Birth date</th> <td>{details.birthDate}</td></tr>
-                                        <tr><th>Gender</th> <td>{details.gender}</td></tr>
-                                        <tr><th>Phone number</th><td>{details.phoneNumber}</td></tr>
-                                        <tr><th>Country</th> <td>{details.country}</td></tr>
-                                        <tr><th>City</th> <td>{details.city}</td></tr>
-                                        <tr><th>Street</th> <td>{details.street}</td> </tr>
-                                        <tr><th>Address</th> <td>{details.address}</td></tr>
-                                        <tr><th>ZIP code</th> <td>{details.zipCode}</td></tr>
+                                        <tr><th>First name</th> <td>{details.firstName ? (details.firstName) : ("Not given")}</td></tr>
+                                        <tr><th>Last name</th> <td>{details.lastName ? (details.lastName) : ("Not given")}</td></tr>
+                                        <tr><th>Birth date</th> <td>{details.birthDate ? (details.birthDate) : ("Not given")}</td></tr>
+                                        <tr><th>Gender</th> <td>{details.gender ? (details.gender) : ("Not given")}</td></tr>
+                                        <tr><th>Phone number</th><td>{details.phoneNumber ? (details.phoneNumber) : ("Not given")}</td></tr>
+                                        <tr><th>Country</th> <td>{details.country ? (details.country) : ("Not given")}</td></tr>
+                                        <tr><th>City</th> <td>{details.city ? (details.city) : ("Not given")}</td></tr>
+                                        <tr><th>Street</th> <td>{details.street ? (details.street) : ("Not given")}</td> </tr>
+                                        <tr><th>Address</th> <td>{details.address ? (details.address) : ("Not given")}</td></tr>
+                                        <tr><th>ZIP code</th> <td>{details.zipCode ? (details.zipCode) : ("Not given")}</td></tr>
                                    </div>
                                     ) : null
                                 )

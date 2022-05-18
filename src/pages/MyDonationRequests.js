@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
-import { Link } from 'react-router-dom'
 import {Button, ButtonToolbar} from 'react-bootstrap';
+import {CreateDonationRequestModal} from '../modals/CreateDonationRequestModal';
 
-class DonationRequests extends Component {
+class MyDonationRequests extends Component {
     constructor(props) {
         super(props)
-        this.state={donationRequests:[]}
+        this.state={donationRequests:[], createModalShow: false}
     }
 
     refreshList(){
@@ -25,22 +25,21 @@ class DonationRequests extends Component {
         this.refreshList();
     }
 
-    showApplication(applicationId) {
-        <Link to={'/donationRequests/' + applicationId}></Link>
-    }
     render() {
 
         const {donationRequests}=this.state;
+        let createModalClose=() => this.setState({createModalShow:false});
         return (
-            <div className='donation_requests2'>
+            <div className='my_donation_requests'>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
-                                <th>Donation request id</th>
-                                <th>Volunteer first name</th>
-                                <th>Volunteer last name</th>
+                                <th>Request ID</th>
                                 <th>Resource type</th>
+                                <th>Quantity gathered</th>
+                                <th>Quantity needed</th>
                                 <th>Emission date</th>
+                                <th>Status</th>
                                 <th>Options</th>
                             </tr>
                         <tbody>
@@ -48,24 +47,27 @@ class DonationRequests extends Component {
                                 donationRequests.map(dr =>
                                     <tr>
                                         <td>{dr.donationRequestId}</td>
-                                        <td>{dr.firstName}</td>
-                                        <td>{dr.lastName}</td>
                                         <td>{dr.resourceType}</td>
+                                        <td>{dr.quantityGathered}</td>
+                                        <td>{dr.quantityNeeded}</td>
                                         <td>{dr.emissionDate}</td>
-                                        <td>
-                                        <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_donation_request/' + dr.donationRequestId}></Link> }>
-                                        <Link to={'/view_donation_request/' + dr.donationRequestId}>View details</Link>
-                                        </Button>
-                                        </td>
+                                        <td>{dr.status}</td>
+                                        <td>View details</td>
                                     </tr>
                                     )
                             }
                         </tbody>
                     </Table>
+                    <ButtonToolbar>
+                        <Button variant='primary' onClick={() => this.setState({createModalShow:true})}>
+                             Create new donation request
+                        </Button>
+                        <CreateDonationRequestModal show={this.state.createModalShow} onHide={createModalClose}/>
+                    </ButtonToolbar>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default DonationRequests;
+export default MyDonationRequests;

@@ -27,6 +27,7 @@ class Navbar extends Component {
     componentDidUpdate() {
         this.refreshList();
     }
+    
     render() {
         const {user}=this.props.auth0;
         var token = user.sub;
@@ -78,7 +79,7 @@ class Navbar extends Component {
                                         );
                                     })
                                 ) : null
-                            ) :  null
+                            ) : (null)
                         )
                     }
                 </ul>

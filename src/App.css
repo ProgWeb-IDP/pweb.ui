@@ -5,7 +5,11 @@
   font-family: "Trebuchet MS";
 }
 
-.users, .donation_requests, .logistic_management, .analytics{
+body{
+  background-color: #bbc;
+}
+
+.users, .donation_requests, .logistic_management, .analytics, .create_donation_request{
   display: flex;
   height: 100vh;
   align-items: center;
@@ -14,7 +18,7 @@
   background-color: #bbc;
 }
 
-.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications{
+.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications, .my_donation_requests{
   display: flex;
   height: 100vh;
   align-items: center;
@@ -23,14 +27,14 @@
   background-color: #bbc;
 }
 
-.volunteers, .administrators{
+.volunteers, .administrators, .donation_requests2{
   width: 50%;
   position:absolute;
   top: 25%;
   left: 25%;
 }
 
-.view_volunteer_app {
+.view_volunteer_app, .view_donation_request{
   width: 70%;
   position:absolute;
   top: 30%;

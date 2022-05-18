@@ -16,7 +16,7 @@ class AddProfileModal extends Component {
         event.target.authToken = user.sub
 
         fetch(process.env.REACT_APP_API + 'users', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -65,43 +65,43 @@ class AddProfileModal extends Component {
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="firstName">
                                         <Form.Label>First name</Form.Label>
-                                        <Form.Control type="text" name="firstName" required placeholder="first name"/>
+                                        <Form.Control type="text" name="firstName" placeholder="first name" />
                                     </Form.Group>
                                     <Form.Group controlId="lastName">
                                         <Form.Label>Last name</Form.Label>
-                                        <Form.Control type="text" name="lastName" required placeholder="last name"/>
+                                        <Form.Control type="text" name="lastName" placeholder="last name"/>
                                     </Form.Group>
                                     <Form.Group controlId="birthDate">
                                         <Form.Label>birthDate</Form.Label>
-                                        <Form.Control type="text" name="birthDate" required placeholder="birth date (eg: 19.12.1998)"/>
+                                        <Form.Control type="text" name="birthDate" placeholder="birth date (eg: 19.12.1998)"/>
                                     </Form.Group>
                                     <Form.Group controlId="gender">
                                         <Form.Label>Gender</Form.Label>
-                                        <Form.Control type="text" name="gender" required placeholder="Gender (M or F)"/>
+                                        <Form.Control type="text" name="gender" placeholder="Gender (M or F)"/>
                                     </Form.Group>
                                     <Form.Group controlId="phoneNumber">
                                         <Form.Label>Phone number</Form.Label>
-                                        <Form.Control type="text" name="phoneNumber" required placeholder="Phone number"/>
+                                        <Form.Control type="text" name="phoneNumber" placeholder="Phone number"/>
                                     </Form.Group>
                                     <Form.Group controlId="country">
                                         <Form.Label>Country</Form.Label>
-                                        <Form.Control type="text" name="country" required placeholder="country"/>
+                                        <Form.Control type="text" name="country" placeholder="country"/>
                                     </Form.Group>
                                     <Form.Group controlId="city">
                                         <Form.Label>City</Form.Label>
-                                        <Form.Control type="text" name="city" required placeholder="city"/>
+                                        <Form.Control type="text" name="city" placeholder="city"/>
                                     </Form.Group>
                                     <Form.Group controlId="street">
                                         <Form.Label>Street</Form.Label>
-                                        <Form.Control type="text" name="street" required placeholder="Street"/>
+                                        <Form.Control type="text" name="street" placeholder="Street"/>
                                     </Form.Group>
                                     <Form.Group controlId="address">
                                         <Form.Label>Address</Form.Label>
-                                        <Form.Control type="text" name="address" required placeholder="Address (Building number etc)"/>
+                                        <Form.Control type="text" name="address" placeholder="Address (Building number etc)"/>
                                     </Form.Group>
                                     <Form.Group controlId="zipCode">
                                         <Form.Label>ZIP code</Form.Label>
-                                        <Form.Control type="text" name="zipCode" required placeholder="ZIP code"/>
+                                        <Form.Control type="text" name="zipCode" placeholder="ZIP code"/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit">

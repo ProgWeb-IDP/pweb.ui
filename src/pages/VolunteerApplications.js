@@ -3,11 +3,6 @@ import {Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import {Button, ButtonToolbar} from 'react-bootstrap';
 
-const myData = {
-    name:"test"
-}
-console.log(myData)
-
 class VolunteerApplications extends Component {
     constructor(props) {
         super(props)

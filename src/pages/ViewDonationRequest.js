@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 
-class ViewVolunteerApp extends Component {
+class ViewDonationRequest extends Component {
     constructor(props) {
         super(props)
-        this.state={application:[]}
+        this.state={donationRequest:[]}
         const path = window.location.pathname;
-        this.app_id = parseInt(path.replace("/view_volunteer_app/", ''));
+        this.request_id = parseInt(path.replace("/view_donation_request/", ''));
     }
 
     refreshList(){
-        fetch(process.env.REACT_APP_API + 'volunteerapplication/' + this.app_id)
+        fetch(process.env.REACT_APP_API + 'requestfordonations/' + this.request_id)
          .then(response => response.json())
          .then(data => {
-             this.setState({application:data})
+             this.setState({donationRequest:data})
          });
     }
 
@@ -28,20 +28,24 @@ class ViewVolunteerApp extends Component {
     }
 
     Approve(){
-        console.log("approve:" + this.app_id)
-        const {application} = this.state;
-        fetch(process.env.REACT_APP_API + 'volunteerapplication', {
+        const {donationRequest} = this.state;
+
+        fetch(process.env.REACT_APP_API + 'requestfordonations', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                applicationId: application[0].applicationId,
-                userId: application[0].userId,
-                applicationStatus: 2,
-                role: application[0].role,
-                summary: application[0].summary
+                donationRequestId: donationRequest[0].donationRequestId,
+                volunteerId: donationRequest[0].volunteerId,
+                requestStatus: 2,
+                resourceType: donationRequest[0].resourceType,
+                quantityNeeded: donationRequest[0].quantityNeeded,
+                shortDescription: donationRequest[0].shortDescription,
+                emissionDate: donationRequest[0].emissionDate,
+                processingDate: donationRequest[0].processingDate,
+                completionDate: donationRequest[0].completionDate
             })
         })
         .then(result => result.json())
@@ -54,23 +58,26 @@ class ViewVolunteerApp extends Component {
     }
 
     Decline(){
-        console.log("decline:" + this.app_id)
-        const {application} = this.state;
-        fetch(process.env.REACT_APP_API + 'volunteerapplication', {
+        const {donationRequest} = this.state;
+        fetch(process.env.REACT_APP_API + 'requestfordonations', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                applicationId: application[0].applicationId,
-                userId: application[0].userId,
-                applicationStatus: 0,
-                role: application[0].role,
-                summary: application[0].summary
+                donationRequestId: donationRequest[0].donationRequestId,
+                volunteerId: donationRequest[0].volunteerId,
+                requestStatus: 0,
+                resourceType: donationRequest[0].resourceType,
+                quantityNeeded: donationRequest[0].quantityNeeded,
+                shortDescription: donationRequest[0].shortDescription,
+                emissionDate: donationRequest[0].emissionDate,
+                processingDate: donationRequest[0].processingDate,
+                completionDate: donationRequest[0].completionDate
             })
         })
-        .then(result => result.json())
+        //.then(result => result.json())
         // .then((result) => {
         //     alert(result);
         // },
@@ -80,42 +87,50 @@ class ViewVolunteerApp extends Component {
     }
 
     render() {
-        const {application}=this.state;
+        const {donationRequest}=this.state;
         return (
-            <div className='view_volunteer_app'>
+            <div className='view_donation_request'>
                 <Table className="mt-4" striped border hover size="sm">
                 <tbody>
                     {
-                        application.map(app =>
+                        donationRequest.map(dr =>
                             <div>
                                 <tr>
-                                    <th>First name</th>
-                                    <td>{app.firstName}</td>
+                                    <th>Volunteer first name</th>
+                                    <td>{dr.firstName}</td>
                                 </tr>
                                 <tr>
-                                    <th>Last name</th>
-                                    <td>{app.lastName}</td>
+                                    <th>Volunteer last name</th>
+                                    <td>{dr.lastName}</td>
                                 </tr>
                                 <tr>
-                                    <th>Role</th>
-                                    <td>{app.role}</td>
+                                    <th>Resource type</th>
+                                    <td>{dr.resourceType}</td>
                                 </tr>
                                 <tr>
-                                    <th>Summary</th>
-                                    <td>{app.summary}</td>
+                                    <th>Quantity needed</th>
+                                    <td>{dr.quantityNeeded}</td>
+                                </tr>
+                                <tr>
+                                    <th>Short description</th>
+                                    <td>{dr.shortDescription}</td>
+                                </tr>
+                                <tr>
+                                    <th>Emission date</th>
+                                    <td>{dr.emissionDate}</td>
                                 </tr>
                                  <tr>
                                     <th>Options</th>
                                     <td>
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="success" size="sm" onClick={() => this.Approve()}>
-                                        <Link to='/volunteer_applications'>
+                                        <Link to='/donation_requests'>
                                             Approve
                                         </Link>
                                         </Button>
                                             
                                         <Button className="mr-2" variant="info" size="sm" onClick={() => this.Decline()}>
-                                        <Link to='/volunteer_applications'>
+                                        <Link to='/donation_requests'>
                                             Decline
                                         </Link>
                                         </Button>
@@ -129,7 +144,7 @@ class ViewVolunteerApp extends Component {
                 </Table>
                 <ButtonToolbar>
                         <Button variant='dark' onClick={() => null}>
-                        <Link to='/volunteer_applications'>
+                        <Link to='/donation_requests'>
                             BACK
                         </Link>
                         </Button>
@@ -139,4 +154,4 @@ class ViewVolunteerApp extends Component {
     }
 }
 
-export default ViewVolunteerApp;
+export default ViewDonationRequest;
