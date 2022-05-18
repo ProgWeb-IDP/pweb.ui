@@ -7,6 +7,22 @@ class AddProfileModal extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
+        const {user} = this.props.auth0;
+        this.account = null;
+        fetch(process.env.REACT_APP_API + 'auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                authToken: user.sub
+            })
+        })
+        .then(result => result.json())
+        .then((result) => {
+            this.account = result;
+        });
     }
 
     handleSubmit(event) {
@@ -14,7 +30,7 @@ class AddProfileModal extends Component {
         
         const {user} = this.props.auth0;
         event.target.authToken = user.sub
-
+        console.log(this.account)
         fetch(process.env.REACT_APP_API + 'users', {
             method: 'PUT',
             headers: {
@@ -23,21 +39,35 @@ class AddProfileModal extends Component {
             },
             body: JSON.stringify({
                 authToken: event.target.authToken,
-                firstName:event.target.firstName.value,
-                lastName:event.target.lastName.value,
-                birthDate:event.target.birthDate.value,
-                gender:event.target.gender.value,
-                phoneNumber:event.target.phoneNumber.value,
-                country:event.target.country.value,
-                city:event.target.city.value,
-                street:event.target.street.value,
-                address:event.target.address.value,
-                zipCode:event.target.zipCode.value
+                firstName: (event.target.firstName.value ? (event.target.firstName.value) : (this.account[0].firstName)),
+                lastName: (event.target.lastName.value ? (event.target.lastName.value) : (this.account[0].lastName)),
+                birthDate: (event.target.birthDate.value ? (event.target.birthDate.value) : (this.account[0].birthDate)),
+                gender: (event.target.gender.value ? (event.target.gender.value) : (this.account[0].gender)),
+                phoneNumber: (event.target.phoneNumber.value ? (event.target.phoneNumber.value) : (this.account[0].phoneNumber)),
+                country: (event.target.country.value ? (event.target.country.value) : (this.account[0].country)),
+                city: (event.target.city.value ? (event.target.city.value) : (this.account[0].city)),
+                street: (event.target.street.value ? (event.target.street.value) : (this.account[0].street)),
+                address: (event.target.address.value ? (event.target.address.value) : (this.account[0].address)),
+                zipCode: (event.target.zipCode.value ? (event.target.zipCode.value) : (this.account[0].zipCode)),
             })
         })
         .then(result => result.json())
         .then((result) => {
-            alert(result);
+            fetch(process.env.REACT_APP_API + 'auth', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    authToken: user.sub
+                })
+            })
+            .then(result => result.json())
+            .then((result) => {
+                this.account = result;
+            });
+            this.props.onHide();
         },
         (error) => {
             alert("Failed to add a profile details.");
@@ -73,7 +103,7 @@ class AddProfileModal extends Component {
                                     </Form.Group>
                                     <Form.Group controlId="birthDate">
                                         <Form.Label>birthDate</Form.Label>
-                                        <Form.Control type="text" name="birthDate" placeholder="birth date (eg: 19.12.1998)"/>
+                                        <Form.Control type="date" name="birthDate" placeholder="birth date"/>
                                     </Form.Group>
                                     <Form.Group controlId="gender">
                                         <Form.Label>Gender</Form.Label>
