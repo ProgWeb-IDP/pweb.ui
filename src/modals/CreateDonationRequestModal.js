@@ -1,10 +1,27 @@
 import React, {Component} from 'react';
 import {Modal,Button, Row, Col, Form} from 'react-bootstrap';
+import { withAuth0 } from '@auth0/auth0-react';
 
-export class CreateDonationRequestModal extends Component {
+class CreateDonationRequestModal extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
+        const {user} = this.props.auth0;
+        this.account = null;
+        fetch(process.env.REACT_APP_API + 'auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                authToken: user.sub
+            })
+        })
+        .then(result => result.json())
+        .then((result) => {
+            this.account = result;
+        });
     }
 
     handleSubmit(event) {
@@ -17,19 +34,15 @@ export class CreateDonationRequestModal extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                volunteerId: 1,
+                volunteerId: this.account[0].userId,
                 resourceType:event.target.resourceType.value,
                 quantityNeeded:event.target.quantityNeeded.value,
                 shortDescription:event.target.shortDescription.value
             })
         })
-        .then(result => result.json())
-        .then((result) => {
-            alert(result);
-        },
-        (error) => {
-            alert("Failed to create donation request.");
-        })
+        .then(result => result.json());
+        this.props.onHide();
+        
     }
 
     render() {
@@ -79,3 +92,4 @@ export class CreateDonationRequestModal extends Component {
         )
     }
 }
+export default withAuth0(CreateDonationRequestModal);

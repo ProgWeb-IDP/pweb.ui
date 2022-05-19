@@ -1,20 +1,46 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
-import {CreateDonationRequestModal} from '../modals/CreateDonationRequestModal';
+import CreateDonationRequestModal from '../modals/CreateDonationRequestModal';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class MyDonationRequests extends Component {
     constructor(props) {
         super(props)
         this.state={donationRequests:[], createModalShow: false}
+        const {user} = this.props.auth0;
+        this.account = null;
+        fetch(process.env.REACT_APP_API + 'auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                authToken: user.sub
+            })
+        })
+        .then(result => result.json())
+        .then((result) => {
+            this.account = result;
+            console.log(this.account);
+        });
+        setTimeout(() => this.refreshList(), 200);
     }
 
     refreshList(){
-        fetch(process.env.REACT_APP_API + 'requestfordonations')
-        .then(response => response.json())
-        .then(data => {
-            this.setState({donationRequests:data})
-        });
+        if(this.account != null)
+        {
+            console.log("nu e null")
+            fetch(process.env.REACT_APP_API + 'volunteer/' + this.account[0].userId) 
+            .then(response => response.json())
+            .then(data => {
+                this.setState({donationRequests:data})
+            });
+        }
+        else{
+            console.log("nullllllllllllll")
+        }
     }
 
     componentDidMount() {
@@ -28,6 +54,7 @@ class MyDonationRequests extends Component {
     render() {
 
         const {donationRequests}=this.state;
+        console.log(donationRequests);
         let createModalClose=() => this.setState({createModalShow:false});
         return (
             <div className='my_donation_requests'>
@@ -51,7 +78,7 @@ class MyDonationRequests extends Component {
                                         <td>{dr.quantityGathered}</td>
                                         <td>{dr.quantityNeeded}</td>
                                         <td>{dr.emissionDate}</td>
-                                        <td>{dr.status}</td>
+                                        <td>{(dr.requestStatus == 1 ? "Waiting for approval" :(dr.requestStatus == 0 ? "Declined" : (dr.requestStatus == 2 ? "Active" : "Goal achieved")))}</td>
                                         <td>View details</td>
                                     </tr>
                                     )
@@ -70,4 +97,4 @@ class MyDonationRequests extends Component {
     }
 }
 
-export default MyDonationRequests;
+export default withAuth0(MyDonationRequests);
