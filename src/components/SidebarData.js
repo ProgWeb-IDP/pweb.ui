@@ -86,7 +86,7 @@ export const VolunteerSideBarData = [
     },
     {
         title: 'view pending donations',
-        path: '/test',
+        path: '/view_pending_donations',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
@@ -106,13 +106,13 @@ export const NormalUserSideBarData = [
     },
     {
         title: 'Donate',
-        path: '/test',
+        path: '/donate',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
         title: 'Become a volunteer',
-        path: '/test',
+        path: '/become_a_volunteer',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
@@ -198,13 +198,13 @@ export const SidebarData = [
     },
     {/*voluntar user 11*/
         title: 'view pending donations',
-        path: '/test',
+        path: '/view_pending_donations',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {/*normal user 12*/
         title: 'Become a volunteer',
-        path: '/test',
+        path: '/become_a_volunteer',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },

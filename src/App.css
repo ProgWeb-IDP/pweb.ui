@@ -9,7 +9,7 @@ body{
   background-color: #bbc;
 }
 
-.users, .donation_requests, .logistic_management, .analytics, .create_donation_request{
+.users, .donation_requests, .logistic_management, .analytics, .create_donation_request, .donate, .become_a_volunteer{
   display: flex;
   height: 100vh;
   align-items: center;

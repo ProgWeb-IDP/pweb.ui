@@ -17,7 +17,12 @@ import Locations from '../pages/Locations';
 import LEAVE from '../pages/SignOut';
 import Profile from '../pages/Profile';
 import ViewDonationRequest from "../pages/ViewDonationRequest";
+import VolunteerViewDonationRequest from "../pages/VolunteerViewDonationRequest";
+import UserViewDonationRequest from "../pages/UserViewDonationRequest";
 import MyDonationRequests from "../pages/MyDonationRequests";
+import Donate from "../pages/Donate";
+import BecomeAVolunteer from "../pages/BecomeAVolunteer";
+import ViewPendingDonations from "../pages/ViewPendingDonations";
 
 const Router = () => {
   const { isAuthenticated, loginWithRedirect, user} = useAuth0();
@@ -62,12 +67,17 @@ const Router = () => {
           <Route path='/volunteer_applications' element={<VolunteerApplications />} />
           <Route path='/view_volunteer_app/:app_id' element={<ViewVolunteerApp />} />
           <Route path='/view_donation_request/:request_id' element={<ViewDonationRequest />} />
+          <Route path='/volunteer_view_donation_request/:request_id' element={<VolunteerViewDonationRequest />} />
+          <Route path='/user_view_donation_request/:request_id' element={<UserViewDonationRequest />} />
           <Route path='/donation_requests' element={<DonationRequests />} />
           {/* <Route path='/logistic_management' element={<LogisticManagement />} /> */}
           <Route path='/analytics' element={<Analytics />} />
           <Route path='/locations' element={<Locations />} />
           <Route path='/volunteer_roles' element={<VolunteerRoles />} />
           <Route path='/my_donation_requests' element={<MyDonationRequests />} />
+          <Route path='/view_pending_donations' element={<ViewPendingDonations />} />
+          <Route path='/donate' element={<Donate />} />
+          <Route path='/become_a_volunteer' element={<BecomeAVolunteer />} />
           <Route path='/sign_out' element={<LEAVE />} />
         </Routes>
       </BrowserRouter>

@@ -3,6 +3,7 @@ import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 import CreateDonationRequestModal from '../modals/CreateDonationRequestModal';
 import { withAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom'
 
 class MyDonationRequests extends Component {
     constructor(props) {
@@ -31,15 +32,11 @@ class MyDonationRequests extends Component {
     refreshList(){
         if(this.account != null)
         {
-            console.log("nu e null")
             fetch(process.env.REACT_APP_API + 'volunteer/' + this.account[0].userId) 
             .then(response => response.json())
             .then(data => {
                 this.setState({donationRequests:data})
             });
-        }
-        else{
-            console.log("nullllllllllllll")
         }
     }
 
@@ -79,7 +76,11 @@ class MyDonationRequests extends Component {
                                         <td>{dr.quantityNeeded}</td>
                                         <td>{dr.emissionDate}</td>
                                         <td>{(dr.requestStatus == 1 ? "Waiting for approval" :(dr.requestStatus == 0 ? "Declined" : (dr.requestStatus == 2 ? "Active" : "Goal achieved")))}</td>
-                                        <td>View details</td>
+                                        <td>
+                                            <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}></Link> }>
+                                            <Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}>View details</Link>
+                                            </Button>
+                                        </td>
                                     </tr>
                                     )
                             }

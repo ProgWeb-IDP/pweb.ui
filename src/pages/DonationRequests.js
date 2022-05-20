@@ -25,9 +25,6 @@ class DonationRequests extends Component {
         this.refreshList();
     }
 
-    showApplication(applicationId) {
-        <Link to={'/donationRequests/' + applicationId}></Link>
-    }
     render() {
 
         const {donationRequests}=this.state;
