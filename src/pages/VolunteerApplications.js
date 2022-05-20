@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import {Button, ButtonToolbar} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 class VolunteerApplications extends Component {
     constructor(props) {

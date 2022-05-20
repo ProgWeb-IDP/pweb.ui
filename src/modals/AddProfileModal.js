@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Modal,Button, Row, Col, Form} from 'react-bootstrap';
-import { useAuth0 } from "@auth0/auth0-react";
 import { withAuth0 } from '@auth0/auth0-react';
 
 class AddProfileModal extends Component {

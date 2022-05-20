@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import {Button, ButtonToolbar} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { withAuth0 } from '@auth0/auth0-react';
 
 class Donate extends Component {

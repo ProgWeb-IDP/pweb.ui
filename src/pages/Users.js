@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
-import {Button, ButtonToolbar} from 'react-bootstrap';
-import AddUserModal from '../modals/AddUserModal';
 
 class Users extends Component {
     constructor(props) {

@@ -8,10 +8,8 @@ import Volunteers from '../pages/Volunteers'
 import VolunteerApplications from '../pages/VolunteerApplications'
 import ViewVolunteerApp from '../pages/ViewVolunteerApp'
 import DonationRequests from '../pages/DonationRequests'
-import LogisticManagement from '../pages/LogisticManagement'
 import Analytics from '../pages/Analytics'
 import { useAuth0 } from "@auth0/auth0-react";
-import TEST from '../pages/test';
 import VolunteerRoles from '../pages/VolunteerRoles';
 import Locations from '../pages/Locations';
 import LEAVE from '../pages/SignOut';
@@ -70,7 +68,6 @@ const Router = () => {
           <Route path='/volunteer_view_donation_request/:request_id' element={<VolunteerViewDonationRequest />} />
           <Route path='/user_view_donation_request/:request_id' element={<UserViewDonationRequest />} />
           <Route path='/donation_requests' element={<DonationRequests />} />
-          {/* <Route path='/logistic_management' element={<LogisticManagement />} /> */}
           <Route path='/analytics' element={<Analytics />} />
           <Route path='/locations' element={<Locations />} />
           <Route path='/volunteer_roles' element={<VolunteerRoles />} />
