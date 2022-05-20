@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import Navbar from '../components/Navbar';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Administrators from '../pages/Administrators'
 import Users from '../pages/Users'
 import Volunteers from '../pages/Volunteers'
@@ -21,6 +21,7 @@ import MyDonationRequests from "../pages/MyDonationRequests";
 import Donate from "../pages/Donate";
 import BecomeAVolunteer from "../pages/BecomeAVolunteer";
 import ViewPendingDonations from "../pages/ViewPendingDonations";
+import Home from "../pages/Home";
 
 const Router = () => {
   const { isAuthenticated, loginWithRedirect, user} = useAuth0();
@@ -58,6 +59,8 @@ const Router = () => {
       <BrowserRouter>
         <Navbar/>
         <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/administrators' element={<Administrators />} />
           <Route path='/users' element={<Users />} />
@@ -79,7 +82,7 @@ const Router = () => {
         </Routes>
       </BrowserRouter>
     )
-    
   );
-    }
+}
+
 export default Router;

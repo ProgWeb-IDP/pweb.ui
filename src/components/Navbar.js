@@ -36,7 +36,7 @@ class Navbar extends Component {
             <>
             <IconContext.Provider value={{color: '#fff'}}>
             <div className="navbar">
-                <div className="logo"> </div>
+                <Link to={"/home"}><div className="logo"> </div></Link>
                 <div className="userInfo">
                     <Avatar name={user.nickname} round="100px" size="50px" />   
                 </div>
