@@ -31,38 +31,41 @@ class VolunteerApplications extends Component {
     render() {
 
         const {volunteerApplications}=this.state;
+        let flag = volunteerApplications.length;
         return (
-            <div className='volunteer_applications'>
-                <div>
-                    <Table className="mt-4" striped border hover size="sm">
-                            <tr>
-                                <th>Application ID</th>
-                                <th>User first name</th>
-                                <th>User last name</th>
-                                <th>Options</th>
-                            </tr>
-                        <tbody>
-                            {
-                                volunteerApplications.map(app =>
-                                    <tr>
-                                        <td>{app.applicationId}</td>
-                                        <td>{app.firstName}</td>
-                                        <td>{app.lastName}</td>
-                                        <td>
+            (flag === 0) ? (<div className='volunteer_applications'>There are 0 applications.</div>) : (
+                <div className='volunteer_applications'>
+                    <div>
+                        <Table className="mt-4" striped border hover size="sm">
+                                <tr>
+                                    <th>Application ID</th>
+                                    <th>User first name</th>
+                                    <th>User last name</th>
+                                    <th>Options</th>
+                                </tr>
+                            <tbody>
+                                {
+                                    volunteerApplications.map(app =>
+                                        <tr>
+                                            <td>{app.applicationId}</td>
+                                            <td>{app.firstName}</td>
+                                            <td>{app.lastName}</td>
+                                            <td>
 
-                                        <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_volunteer_app/' + app.applicationId}></Link> }>
-                                        <Link to={'/view_volunteer_app/' + app.applicationId}>View details</Link>
-                                        </Button>
+                                            <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_volunteer_app/' + app.applicationId}></Link> }>
+                                            <Link to={'/view_volunteer_app/' + app.applicationId}>View details</Link>
+                                            </Button>
 
-                                        </td>
-                                    </tr>
-                                    )
-                            }
-                        </tbody>
-                    </Table>
+                                            </td>
+                                        </tr>
+                                        )
+                                }
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        );
     }
 }
 

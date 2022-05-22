@@ -34,15 +34,13 @@ class VolunteerRoles extends Component {
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
-                                <th>volunteerRoleId</th>
-                                <th>volunteerRoleName</th>
-                                <th>shortDescription</th>
+                                <th>Role name</th>
+                                <th>Short description</th>
                             </tr>
                         <tbody>
                             {
                                 roles.map(role =>
                                     <tr>
-                                        <td>{role.roleId}</td>
                                         <td>{role.roleName}</td>
                                         <td>{role.shortDescription}</td>
                                     </tr>

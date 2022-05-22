@@ -48,6 +48,8 @@ class AddProfileModal extends Component {
                 street: (event.target.street.value ? (event.target.street.value) : (this.account[0].street)),
                 address: (event.target.address.value ? (event.target.address.value) : (this.account[0].address)),
                 zipCode: (event.target.zipCode.value ? (event.target.zipCode.value) : (this.account[0].zipCode)),
+                isAdmin: this.account[0].isAdmin,
+                isVolunteer: this.account[0].isVolunteer,
             })
         })
         .then(result => result.json())
@@ -101,7 +103,7 @@ class AddProfileModal extends Component {
                                         <Form.Control type="text" name="lastName" placeholder="last name"/>
                                     </Form.Group>
                                     <Form.Group controlId="birthDate">
-                                        <Form.Label>birthDate</Form.Label>
+                                        <Form.Label>Birth date</Form.Label>
                                         <Form.Control type="date" name="birthDate" placeholder="birth date"/>
                                     </Form.Group>
                                     <Form.Group controlId="gender">

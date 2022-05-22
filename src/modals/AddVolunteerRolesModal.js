@@ -48,12 +48,12 @@ export class AddVolunteerRolesModal extends Component {
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="roleName">
-                                        <Form.Label>roleName</Form.Label>
-                                        <Form.Control type="text" name="roleName" required placeholder="role name"/>
+                                        <Form.Label>Role name</Form.Label>
+                                        <Form.Control type="text" name="roleName" required placeholder="Role name"/>
                                     </Form.Group>
                                     <Form.Group controlId="roleName">
                                         <Form.Label>Short description</Form.Label>
-                                        <Form.Control type="text" name="shortDescription" required placeholder="Add a short description"/>
+                                        <Form.Control as="textarea" rows={5} type="text" name="shortDescription" required placeholder="Add a short description"/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit">
