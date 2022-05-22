@@ -73,7 +73,7 @@ class CreateDonationRequestModal extends Component {
                                     </Form.Group> 
                                     <Form.Group controlId="shortDescription">
                                         <Form.Label>Short description</Form.Label>
-                                        <Form.Control type="text" name="shortDescription" required placeholder="Short description"/>
+                                        <Form.Control as="textarea" rows={5} type="text" name="shortDescription" required placeholder="Short description"/>
                                     </Form.Group>        
                                     <Form.Group>
                                         <Button variant="primary" type="submit">

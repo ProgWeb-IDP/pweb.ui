@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { AdminSideBarData, VolunteerSideBarData, NormalUserSideBarData } from './SidebarData'
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import Avatar from "react-avatar";
 import { withAuth0 } from '@auth0/auth0-react';
 
 class Navbar extends Component {
@@ -32,7 +31,6 @@ class Navbar extends Component {
         const {user}=this.props.auth0;
         var token = user.sub;
         const {account}=this.state;
-        //account.map(acc => console.log(acc));
         return(
             <>
             <IconContext.Provider value={{color: '#fff'}}>
