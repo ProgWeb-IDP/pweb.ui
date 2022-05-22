@@ -32,14 +32,12 @@ class Navbar extends Component {
         const {user}=this.props.auth0;
         var token = user.sub;
         const {account}=this.state;
+        //account.map(acc => console.log(acc));
         return(
             <>
             <IconContext.Provider value={{color: '#fff'}}>
             <div className="navbar">
                 <Link to={"/home"}><div className="logo"> </div></Link>
-                <div className="userInfo">
-                    <Avatar name={user.nickname} round="100px" size="50px" />   
-                </div>
             </div>
             <nav className='nav-menu'>
                 <ul className='nav-menu-items'>
@@ -79,7 +77,7 @@ class Navbar extends Component {
                                         );
                                     })
                                 ) : null
-                            ) : (null)
+                            ) : null
                         )
                     }
                 </ul>

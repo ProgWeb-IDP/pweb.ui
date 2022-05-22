@@ -18,7 +18,7 @@ body{
   background-color: #bbc;
 }
 
-.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications, .my_donation_requests{
+.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications, .my_donation_requests, .become_a_volunteer{
   display: flex;
   height: 100vh;
   align-items: center;

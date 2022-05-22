@@ -34,15 +34,17 @@ class Locations extends Component {
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
-                                <th>locationId</th>
-                                <th>locationName</th>
+                                <th>Location name</th>
+                                <th>Slots </th>
+                                <th>Options</th>
                             </tr>
                         <tbody>
                             {
                                 locations.map(location =>
                                     <tr>
-                                        <td>{location.locationId}</td>
                                         <td>{location.locationName}</td>
+                                        <td>{location.slots}</td>
+                                        <td>Edit / Delete</td>
                                     </tr>
                                     )
                             }

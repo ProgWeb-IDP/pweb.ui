@@ -16,7 +16,8 @@ export class AddLocationModal extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                locationName:event.target.locationName.value
+                locationName:event.target.locationName.value,
+                slots:event.target.slots.value
             })
         })
         .then(result => result.json())
@@ -47,8 +48,12 @@ export class AddLocationModal extends Component {
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="locationName">
-                                        <Form.Label>locationName</Form.Label>
+                                        <Form.Label>Location name</Form.Label>
                                         <Form.Control type="text" name="locationName" required placeholder="location name"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="slots">
+                                        <Form.Label>Slots</Form.Label>
+                                        <Form.Control type="text" name="slots" required placeholder="slots"/>
                                     </Form.Group>
                                     <Form.Group>
                                         <Button variant="primary" type="submit">

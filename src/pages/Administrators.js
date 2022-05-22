@@ -26,8 +26,11 @@ class Administrators extends Component {
     render() {
 
         const {administrators}=this.state;
+ 
         return (
+
             <div className='administrators'>
+                <h2>{administrators.length} {(administrators.length === 1) ? ("Administrator") : ("Administrators")}</h2>
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>

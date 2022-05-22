@@ -30,6 +30,8 @@ class Profile extends Component {
         const {user}=this.props.auth0;
         var token = user.sub;
         const {account}=this.state;
+        console.log("Profile hwere::");
+        console.log(window.location.href);
         let addModalClose=() => this.setState({addModalShow:false});
         return (
             <div className='profile'>

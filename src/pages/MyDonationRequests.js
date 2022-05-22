@@ -24,7 +24,6 @@ class MyDonationRequests extends Component {
         .then(result => result.json())
         .then((result) => {
             this.account = result;
-            console.log(this.account);
         });
         setTimeout(() => this.refreshList(), 200);
     }

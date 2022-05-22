@@ -85,7 +85,7 @@ export const VolunteerSideBarData = [
         cName: 'nav-text'
     },
     {
-        title: 'view pending donations',
+        title: 'View pending donations',
         path: '/view_pending_donations',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
@@ -197,7 +197,7 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {/*voluntar user 11*/
-        title: 'view pending donations',
+        title: 'View pending donations',
         path: '/view_pending_donations',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'

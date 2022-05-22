@@ -43,8 +43,8 @@ class Users extends Component {
                                     <tr>
                                         <td>{user.firstName}</td>
                                         <td>{user.lastName}</td>
-                                        <td>{(user.isVolunteer == 1 ? "Yes" : "NO")}</td>
-                                        <td>Edit / Delete</td>
+                                        <td>{(user.isVolunteer === 1 ? "Yes" : "NO")}</td>
+                                        <td>See more details</td>
                                     </tr>
                                     )
                             }
