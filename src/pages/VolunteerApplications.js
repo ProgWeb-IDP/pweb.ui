@@ -36,6 +36,7 @@ class VolunteerApplications extends Component {
             (flag === 0) ? (<div className='volunteer_applications'><h2>THERE ARE 0 APPLICATIONS!</h2></div>) : (
                 <div className='volunteer_applications'>
                     <div>
+                    <h2>{volunteerApplications.length} {(volunteerApplications.length === 1) ? ("Application") : ("Applications")}</h2>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
                                     <th>Application ID</th>

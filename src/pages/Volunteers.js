@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
-// import {UpdateRoleModal} from '../modals/UpdateRoleModal';
+//import {UpdateRoleModal} from '../modals/UpdateRoleModal';
 
 class Volunteers extends Component {
     constructor(props) {
@@ -39,9 +39,11 @@ class Volunteers extends Component {
     render() {
         const {volunteers}=this.state;
         let flag = volunteers.length;
+
         return (
             (flag === 0) ? (<div className='volunteers_none'><h2>THERE ARE NO VOLUNTEERS YET!</h2></div>) : (
                 <div className='volunteers'>
+                    <h2>{volunteers.length} {(volunteers.length === 1) ? ("Volunteer") : ("Volunteers")}</h2>
                     <div>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
