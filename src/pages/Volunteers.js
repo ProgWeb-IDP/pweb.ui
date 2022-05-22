@@ -36,16 +36,11 @@ class Volunteers extends Component {
         })
     }
 
-    ChangeRole(userID) {
-
-    }
-
     render() {
         const {volunteers}=this.state;
         let flag = volunteers.length;
-        // let updateModalClose=() => this.setState({updateModalShow:false});
         return (
-            (flag === 0) ? (<div className='volunteers'><h2>There are 0 volunteers.</h2></div>) : (
+            (flag === 0) ? (<div className='volunteers_none'><h2>THERE ARE NO VOLUNTEERS YET!</h2></div>) : (
                 <div className='volunteers'>
                     <div>
                         <Table className="mt-4" striped border hover size="sm">
@@ -66,10 +61,6 @@ class Volunteers extends Component {
                                             <td>{volunteer.locationName}</td>
                                             <td>
                                             <ButtonToolbar>
-                                                <Button className="mr-2" variant="info" size="sm" onClick={() => this.ChangeRole(volunteer.userId)}>
-                                                    Change role #TODO
-                                                </Button>
-                                                
                                                 <Button className="mr-2" variant="danger" size="sm" onClick={() => this.RemoveVolunteer(volunteer.userId)}>
                                                     Remove volunteer
                                                 </Button>

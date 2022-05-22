@@ -40,7 +40,6 @@ class AddProfileModal extends Component {
                 authToken: event.target.authToken,
                 firstName: (event.target.firstName.value ? (event.target.firstName.value) : (this.account[0].firstName)),
                 lastName: (event.target.lastName.value ? (event.target.lastName.value) : (this.account[0].lastName)),
-                birthDate: (event.target.birthDate.value ? (event.target.birthDate.value) : (this.account[0].birthDate)),
                 gender: (event.target.gender.value ? (event.target.gender.value) : (this.account[0].gender)),
                 phoneNumber: (event.target.phoneNumber.value ? (event.target.phoneNumber.value) : (this.account[0].phoneNumber)),
                 country: (event.target.country.value ? (event.target.country.value) : (this.account[0].country)),
@@ -101,10 +100,6 @@ class AddProfileModal extends Component {
                                     <Form.Group controlId="lastName">
                                         <Form.Label>Last name</Form.Label>
                                         <Form.Control type="text" name="lastName" placeholder="last name"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="birthDate">
-                                        <Form.Label>Birth date</Form.Label>
-                                        <Form.Control type="date" name="birthDate" placeholder="birth date"/>
                                     </Form.Group>
                                     <Form.Group controlId="gender">
                                         <Form.Label>Gender</Form.Label>

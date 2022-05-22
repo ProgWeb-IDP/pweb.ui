@@ -30,7 +30,7 @@ class DonationRequests extends Component {
         const {donationRequests}=this.state;
         let flag = donationRequests.length;
         return (
-            (flag === 0) ? (<div className='donation_requests2'>There are 0 donation requests</div>) : (
+            (flag === 0) ? (<div className='donation_requests2'><h2>THERE ARE 0 DONATION REQUESTS</h2></div>) : (
                 <div className='donation_requests2'>
                     <div>
                         <Table className="mt-4" striped border hover size="sm">
@@ -50,10 +50,10 @@ class DonationRequests extends Component {
                                             <td>{dr.firstName}</td>
                                             <td>{dr.lastName}</td>
                                             <td>{dr.resourceType}</td>
-                                            <td>{dr.emissionDate}</td>
+                                            <td>{dr.emissionDate.substring(0, 10)}</td>
                                             <td>
-                                            <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_donation_request/' + dr.donationRequestId}></Link> }>
-                                            <Link to={'/view_donation_request/' + dr.donationRequestId}>View details</Link>
+                                            <Button className="mr-2" variant="primary" size="sm" onClick={() =><Link to={'/view_donation_request/' + dr.donationRequestId}></Link> }>
+                                            <Link style={{ textDecoration: 'none', color: 'white' }} to={'/view_donation_request/' + dr.donationRequestId}>View details</Link>
                                             </Button>
                                             </td>
                                         </tr>

@@ -29,7 +29,7 @@ class Donate extends Component {
     }
 
     refreshList(){
-        if(this.account != null && this.flag == 0)
+        if(this.account !== null && this.flag === 0)
         {
             fetch(process.env.REACT_APP_API + 'donate')
             .then(response => response.json())
@@ -76,8 +76,8 @@ class Donate extends Component {
                                         <td>{dr.resourceType}</td>
                                         <td>{dr.quantityGathered} / {dr.quantityNeeded}</td>
                                         <td>
-                                        <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/user_view_donation_request/' + dr.donationRequestId}></Link> }>
-                                        <Link to={'/user_view_donation_request/' + dr.donationRequestId}>View details</Link>
+                                        <Button className="mr-2" variant="primary" size="sm" onClick={() =><Link to={'/user_view_donation_request/' + dr.donationRequestId}></Link> }>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to={'/user_view_donation_request/' + dr.donationRequestId}>View details</Link>
                                         </Button>
                                         </td>
                                     </tr>
@@ -103,8 +103,15 @@ class Donate extends Component {
                                         <td>{donation.donationId}</td>
                                         <td>{donation.resourceType}</td>
                                         <td>{donation.quantityDonated}</td>
-                                        <td>{donation.emissionDate}</td>
-                                        <td>{donation.donationStatus}</td>
+                                        <td>{donation.emissionDate.substring(0, 10)}</td>
+                                        <td>{
+                                            (donation.donationStatus === 0) ? ("Rejected") :
+                                            (donation.donationStatus === 1) ? ("Pending") :
+                                            (donation.donationStatus === 2) ? ("To be collected") :
+                                            (donation.donationStatus === 3) ? ("Received") :
+                                            (donation.donationStatus === 4) ? ("Delivered") : ("Unknown")
+                                        }
+                                        </td>
                                     </tr>
                                     )
                             }

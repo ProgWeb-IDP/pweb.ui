@@ -2,6 +2,8 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as CgIcons from 'react-icons/cg';
 import * as IoIcons from 'react-icons/io';
+import * as FcIcons from "react-icons/fc";
+import * as MdIcons from "react-icons/md";
 
 export const AdminSideBarData = [
     {
@@ -37,7 +39,7 @@ export const AdminSideBarData = [
     {
         title: 'Donation requests',
         path: '/donation_requests',
-        icon: <FaIcons.FaHandHoldingMedical />,
+        icon: <FaIcons.FaDonate />,
         cName: 'nav-text'
     },
     {
@@ -75,13 +77,13 @@ export const VolunteerSideBarData = [
     {
         title: 'My donation requests',
         path: '/my_donation_requests',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaDonate />,
         cName: 'nav-text'
     },
     {
         title: 'View donations',
         path: '/view_pending_donations',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FaIcons.FaDonate />,
         cName: 'nav-text'
     },
     {
@@ -101,13 +103,13 @@ export const NormalUserSideBarData = [
     {
         title: 'Donate',
         path: '/donate',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <FcIcons.FcDonate />,
         cName: 'nav-text'
     },
     {
         title: 'Become a volunteer',
         path: '/become_a_volunteer',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <MdIcons.MdVolunteerActivism />,
         cName: 'nav-text'
     },
     {

@@ -35,8 +35,7 @@ class Users extends Component {
                                 <th>First name</th>
                                 <th>Last name</th>
                                 <th>Volunteer</th>
-                                <th>Donor</th>
-                                <th>Options</th>
+                                <th>Donations</th>
                             </tr>
                         <tbody>
                             {
@@ -45,8 +44,7 @@ class Users extends Component {
                                         <td>{user.firstName}</td>
                                         <td>{user.lastName}</td>
                                         <td>{(user.isVolunteer === 1 ? "Yes" : "NO")}</td>
-                                        <td>NO</td>
-                                        <td>See more details</td>
+                                        <td>{(user.numberOfDonations)}</td>
                                     </tr>
                                     )
                             }

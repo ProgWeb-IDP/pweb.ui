@@ -33,7 +33,7 @@ class VolunteerApplications extends Component {
         const {volunteerApplications}=this.state;
         let flag = volunteerApplications.length;
         return (
-            (flag === 0) ? (<div className='volunteer_applications'>There are 0 applications.</div>) : (
+            (flag === 0) ? (<div className='volunteer_applications'><h2>THERE ARE 0 APPLICATIONS!</h2></div>) : (
                 <div className='volunteer_applications'>
                     <div>
                         <Table className="mt-4" striped border hover size="sm">
@@ -52,8 +52,8 @@ class VolunteerApplications extends Component {
                                             <td>{app.lastName}</td>
                                             <td>
 
-                                            <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/view_volunteer_app/' + app.applicationId}></Link> }>
-                                            <Link to={'/view_volunteer_app/' + app.applicationId}>View details</Link>
+                                            <Button className="mr-2" variant="primary" size="sm" onClick={() =><Link to={'/view_volunteer_app/' + app.applicationId}></Link> }>
+                                            <Link style={{ textDecoration: 'none', color: 'white' }} to={'/view_volunteer_app/' + app.applicationId}>View details</Link>
                                             </Button>
 
                                             </td>

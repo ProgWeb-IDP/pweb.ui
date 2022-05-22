@@ -71,8 +71,8 @@ class ViewDonationRequest extends Component {
                 </tbody>
                 </Table>
                 <ButtonToolbar>
-                        <Button variant='dark' onClick={() => null}>
-                        <Link to='/donate'>
+                        <Button variant='primary' onClick={() => null}>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/donate'>
                             BACK
                         </Link>
                         </Button>

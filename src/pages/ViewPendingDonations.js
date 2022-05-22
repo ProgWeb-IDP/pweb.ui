@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 import { withAuth0 } from '@auth0/auth0-react';
 
@@ -49,8 +49,7 @@ class ViewPendingDonations extends Component {
     UpdateDonation(donation_id, new_status){
         const {pendingDonations} = this.state;
         let donation;
-        pendingDonations.filter(filter_pd => filter_pd.donationId === donation_id).
-        map(pd =>{
+        pendingDonations.filter(filter_pd => filter_pd.donationId === donation_id).map(pd =>{
             donation = pd;
         });
 
@@ -112,7 +111,7 @@ class ViewPendingDonations extends Component {
                                             <td>{pd.firstName} {pd.lastName}</td>
                                             <td>{pd.quantityDonated}</td>
                                             <td>{pd.resourceType}</td>
-                                            <td>{pd.emissionDate}</td>
+                                            <td>{pd.emissionDate.substring(0, 10)}</td>
                                             <td>{pd.country}, {pd.city}, {pd.street}, {pd.address}</td>
 
                                             <td>
@@ -158,7 +157,7 @@ class ViewPendingDonations extends Component {
                                             <td>{pd.firstName} {pd.lastName}</td>
                                             <td>{pd.quantityDonated}</td>
                                             <td>{pd.resourceType}</td>
-                                            <td>{pd.emissionDate}</td>
+                                            <td>{pd.emissionDate.substring(0, 10)}</td>
                                             <td>{pd.country}, {pd.city}, {pd.street}, {pd.address}</td>
 
                                             <td>
@@ -203,7 +202,7 @@ class ViewPendingDonations extends Component {
                                             <td>{pd.firstName} {pd.lastName}</td>
                                             <td>{pd.quantityDonated}</td>
                                             <td>{pd.resourceType}</td>
-                                            <td>{pd.collectionDate}</td>
+                                            <td>{pd.collectionDate.substring(0, 10)}</td>
 
                                             <td>
 

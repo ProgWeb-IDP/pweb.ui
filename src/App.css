@@ -9,7 +9,7 @@ body{
   background-color: #bbc;
 }
 
-.users, .donation_requests, .logistic_management, .analytics, .create_donation_request, .donate, .become_a_volunteer{
+.users, .donation_requests, .logistic_management, .create_donation_request, .donate, .become_a_volunteer{
   display: flex;
   height: 100vh;
   align-items: center;
@@ -18,7 +18,7 @@ body{
   background-color: #bbc;
 }
 
-.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications, .my_donation_requests, .become_a_volunteer{
+.test_class, .locations, .volunteer_roles, .profile, .volunteer_applications, .my_donation_requests, .become_a_volunteer {
   display: flex;
   height: 100vh;
   align-items: center;
@@ -27,11 +27,17 @@ body{
   background-color: #bbc;
 }
 
-.volunteers, .administrators, .donation_requests2{
-  width: 50%;
+.volunteers, .administrators, .donation_requests2, .volunteers_none{
   position:absolute;
   top: 25%;
   left: 25%;
+}
+
+.analytics{
+  position:absolute;
+  top: 20%;
+  left: 45%;
+  font-size: 18px;
 }
 
 .view_volunteer_app, .view_donation_request{

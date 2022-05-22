@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table} from 'react-bootstrap';
+// import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 import ApplyVolunteerModal from '../modals/ApplyVolunteerModal';
 import { withAuth0 } from '@auth0/auth0-react';
@@ -61,7 +61,7 @@ class BecomeAVolunteer extends Component {
             return (
             <div className='become_a_volunteer'>
                 <div>
-                    <h3>Ceva abureala, mesaj scurt, vrei sa ajuti refugiatii, aplica ca voluntar acum</h3>
+                    <h3>You want to be a part of our volunteers team? Don't hesitate and complete the next form!</h3>
                     <ButtonToolbar>
                         <Button variant='primary' onClick={() => this.setState({applyModalShow:true})}>
                             Become a volunteer

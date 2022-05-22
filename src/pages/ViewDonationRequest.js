@@ -117,20 +117,20 @@ class ViewDonationRequest extends Component {
                                 </tr>
                                 <tr>
                                     <th>Emission date</th>
-                                    <td>{dr.emissionDate}</td>
+                                    <td>{dr.emissionDate.substring(0, 10)}</td>
                                 </tr>
                                  <tr>
                                     <th>Options</th>
                                     <td>
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="success" size="sm" onClick={() => this.Approve()}>
-                                        <Link to='/donation_requests'>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/donation_requests'>
                                             Approve
                                         </Link>
                                         </Button>
                                             
-                                        <Button className="mr-2" variant="info" size="sm" onClick={() => this.Decline()}>
-                                        <Link to='/donation_requests'>
+                                        <Button className="mr-2" variant="danger" size="sm" onClick={() => this.Decline()}>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/donation_requests'>
                                             Decline
                                         </Link>
                                         </Button>
@@ -143,8 +143,8 @@ class ViewDonationRequest extends Component {
                 </tbody>
                 </Table>
                 <ButtonToolbar>
-                        <Button variant='dark' onClick={() => null}>
-                        <Link to='/donation_requests'>
+                        <Button variant='primary' onClick={() => null}>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/donation_requests'>
                             BACK
                         </Link>
                         </Button>

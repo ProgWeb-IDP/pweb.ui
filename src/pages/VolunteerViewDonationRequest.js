@@ -64,7 +64,7 @@ class VolunteerViewDonationRequest extends Component {
                                     </tr>
                                     <tr>
                                         <th>Emission date</th>
-                                        <td>{dr.emissionDate}</td>
+                                        <td>{dr.emissionDate.substring(0, 10)}</td>
                                     </tr>
                                 </div>
                             )
@@ -72,8 +72,8 @@ class VolunteerViewDonationRequest extends Component {
                     </tbody>
                     </Table>
                     <ButtonToolbar>
-                            <Button variant='dark' onClick={() => null}>
-                            <Link to='/my_donation_requests'>
+                            <Button variant='primary' onClick={() => null}>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} to='/my_donation_requests'>
                                 BACK
                             </Link>
                             </Button>

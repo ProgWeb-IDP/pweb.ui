@@ -29,9 +29,9 @@ class Profile extends Component {
     render() {
         const {user}=this.props.auth0;
         var token = user.sub;
-        const {account}=this.state;
-        console.log("Profile hwere::");
-        console.log(window.location.href);
+        const {account} = this.state;
+        // console.log("Profile hwere::");
+        // account.map(details => (details.authToken === token) ? (console.log(details)) : (null));
         let addModalClose=() => this.setState({addModalShow:false});
         return (
             <div className='profile'>
@@ -43,7 +43,6 @@ class Profile extends Component {
                                     <div>
                                         <tr><th>First name</th> <td>{details.firstName ? (details.firstName) : ("Not given")}</td></tr>
                                         <tr><th>Last name</th> <td>{details.lastName ? (details.lastName) : ("Not given")}</td></tr>
-                                        <tr><th>Birth date</th> <td>{details.birthDate ? (details.birthDate) : ("Not given")}</td></tr>
                                         <tr><th>Gender</th> <td>{details.gender ? (details.gender) : ("Not given")}</td></tr>
                                         <tr><th>Phone number</th><td>{details.phoneNumber ? (details.phoneNumber) : ("Not given")}</td></tr>
                                         <tr><th>Country</th> <td>{details.country ? (details.country) : ("Not given")}</td></tr>

@@ -45,19 +45,18 @@ class Locations extends Component {
             ) : (
                 <div className='locations'>
                     <div>
+                    <h2>{locations.length} {(locations.length === 1) ? ("location") : ("locations")}</h2>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
                                     <th>Location name</th>
-                                    <th>Options</th>
                                 </tr>
                             <tbody>
                                 {
                                     locations.map(location =>
                                         <tr>
                                             <td>{location.locationName}</td>
-                                            <td>Delete</td>
                                         </tr>
-                                        )
+                                    )
                                 }
                             </tbody>
                         </Table>
@@ -69,13 +68,7 @@ class Locations extends Component {
                     </ButtonToolbar>
                     </div>
                 </div>
-                )
-                    /* <ButtonToolbar>
-                        <Button variant='primary' onClick={() => this.setState({addModalShow:true})}>
-                            Add location
-                        </Button>
-                        <AddLocationModal show={this.state.addModalShow} onHide={addModalClose}/>
-                    </ButtonToolbar> */
+            )
         );
     }
 }

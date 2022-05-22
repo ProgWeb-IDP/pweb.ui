@@ -9,6 +9,10 @@ export class AddVolunteerRolesModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log("HEREE rolename");
+        console.log(event.target.roleName.value);
+        console.log("HEREE desc");
+        console.log(event.target.shortDescription.value);
         fetch(process.env.REACT_APP_API + 'volunteerroles', {
             method: 'POST',
             headers: {
@@ -51,7 +55,7 @@ export class AddVolunteerRolesModal extends Component {
                                         <Form.Label>Role name</Form.Label>
                                         <Form.Control type="text" name="roleName" required placeholder="Role name"/>
                                     </Form.Group>
-                                    <Form.Group controlId="roleName">
+                                    <Form.Group controlId="shortDescription">
                                         <Form.Label>Short description</Form.Label>
                                         <Form.Control as="textarea" rows={5} type="text" name="shortDescription" required placeholder="Add a short description"/>
                                     </Form.Group>

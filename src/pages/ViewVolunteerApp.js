@@ -46,12 +46,6 @@ class ViewVolunteerApp extends Component {
             })
         })
         .then(result => result.json())
-        // .then((result) => {
-        //     alert(result);
-        // },
-        // (error) => {
-        //     alert("Failed to update volunteer application");
-        // })
     }
 
     Decline(){
@@ -73,12 +67,6 @@ class ViewVolunteerApp extends Component {
             })
         })
         .then(result => result.json())
-        // .then((result) => {
-        //     alert(result);
-        // },
-        // (error) => {
-        //     alert("Failed to update volunteer application");
-        // })
     }
 
     render() {
@@ -115,13 +103,13 @@ class ViewVolunteerApp extends Component {
                                     <td>
                                     <ButtonToolbar>
                                         <Button className="mr-2" variant="success" size="sm" onClick={() => this.Approve()}>
-                                        <Link to='/volunteer_applications'>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/volunteer_applications'>
                                             Approve
                                         </Link>
                                         </Button>
                                             
-                                        <Button className="mr-2" variant="info" size="sm" onClick={() => this.Decline()}>
-                                        <Link to='/volunteer_applications'>
+                                        <Button className="mr-2" variant="danger" size="sm" onClick={() => this.Decline()}>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/volunteer_applications'>
                                             Decline
                                         </Link>
                                         </Button>
@@ -134,8 +122,8 @@ class ViewVolunteerApp extends Component {
                 </tbody>
                 </Table>
                 <ButtonToolbar>
-                        <Button variant='dark' onClick={() => null}>
-                        <Link to='/volunteer_applications'>
+                        <Button variant='primary' onClick={() => null}>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/volunteer_applications'>
                             BACK
                         </Link>
                         </Button>

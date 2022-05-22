@@ -85,11 +85,11 @@ class MyDonationRequests extends Component {
                                             <td>{dr.resourceType}</td>
                                             <td>{dr.quantityGathered}</td>
                                             <td>{dr.quantityNeeded}</td>
-                                            <td>{dr.emissionDate}</td>
+                                            <td>{dr.emissionDate.substring(0, 10)}</td>
                                             <td>{(dr.requestStatus === 1 ? "Waiting for approval" :(dr.requestStatus === 0 ? "Declined" : (dr.requestStatus === 2 ? "Active" : "Goal achieved")))}</td>
                                             <td>
-                                                <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}></Link> }>
-                                                <Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}>View details</Link>
+                                                <Button className="mr-2" variant="primary" size="sm" onClick={() =><Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}></Link> }>
+                                                <Link style={{ textDecoration: 'none', color: 'white' }} to={'/volunteer_view_donation_request/' + dr.donationRequestId}>View details</Link>
                                                 </Button>
                                             </td>
                                         </tr>
