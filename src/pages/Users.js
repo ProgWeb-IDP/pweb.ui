@@ -30,6 +30,7 @@ class Users extends Component {
         return (
            <div className='test_class'>
                 <div>
+                    <h2>{users.length} {(users.length === 1) ? ("User") : ("Users")}</h2>
                     <Table className="mt-4" striped border hover size="sm" responsive>
                             <tr>
                                 <th>First name</th>
