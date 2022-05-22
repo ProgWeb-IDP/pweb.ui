@@ -32,10 +32,10 @@ class DonationRequests extends Component {
         return (
             (flag === 0) ? (<div className='donation_requests2'><h2>THERE ARE 0 DONATION REQUESTS</h2></div>) : (
                 <div className='donation_requests2'>
+                    <h2>{donationRequests.length} {(donationRequests.length === 1) ? ("Donation request") : ("Donation requests")}</h2>
                     <div>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
-                                    <th>Donation request id</th>
                                     <th>Volunteer first name</th>
                                     <th>Volunteer last name</th>
                                     <th>Resource type</th>
@@ -46,7 +46,6 @@ class DonationRequests extends Component {
                                 {
                                     donationRequests.map(dr =>
                                         <tr>
-                                            <td>{dr.donationRequestId}</td>
                                             <td>{dr.firstName}</td>
                                             <td>{dr.lastName}</td>
                                             <td>{dr.resourceType}</td>

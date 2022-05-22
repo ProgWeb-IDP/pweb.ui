@@ -39,7 +39,6 @@ class VolunteerApplications extends Component {
                     <h2>{volunteerApplications.length} {(volunteerApplications.length === 1) ? ("Application") : ("Applications")}</h2>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
-                                    <th>Application ID</th>
                                     <th>User first name</th>
                                     <th>User last name</th>
                                     <th>Options</th>
@@ -48,7 +47,6 @@ class VolunteerApplications extends Component {
                                 {
                                     volunteerApplications.map(app =>
                                         <tr>
-                                            <td>{app.applicationId}</td>
                                             <td>{app.firstName}</td>
                                             <td>{app.lastName}</td>
                                             <td>

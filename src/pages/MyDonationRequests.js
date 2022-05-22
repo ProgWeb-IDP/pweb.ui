@@ -65,8 +65,9 @@ class MyDonationRequests extends Component {
                 </div>
             </div>) : (
                 <div className='my_donation_requests'>
+                    
                     <div>
-                        
+                    <h2>{donationRequests.length} {(donationRequests.length === 1) ? ("Donation request") : ("Donation requests")}</h2>
                         <Table className="mt-4" striped border hover size="sm">
                                 <tr>
                                     <th>Request ID</th>
