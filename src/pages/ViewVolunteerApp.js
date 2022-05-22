@@ -40,7 +40,8 @@ class ViewVolunteerApp extends Component {
                 applicationId: application[0].applicationId,
                 userId: application[0].userId,
                 applicationStatus: 2,
-                role: application[0].role,
+                roleId: application[0].roleId,
+                locationId: application[0].locationId,
                 summary: application[0].summary
             })
         })
@@ -66,7 +67,8 @@ class ViewVolunteerApp extends Component {
                 applicationId: application[0].applicationId,
                 userId: application[0].userId,
                 applicationStatus: 0,
-                role: application[0].role,
+                roleId: application[0].roleId,
+                locationId: application[0].locationId,
                 summary: application[0].summary
             })
         })
@@ -98,7 +100,11 @@ class ViewVolunteerApp extends Component {
                                 </tr>
                                 <tr>
                                     <th>Role</th>
-                                    <td>{app.role}</td>
+                                    <td>{app.roleName}</td>
+                                </tr>
+                                <tr>
+                                    <th>Location</th>
+                                    <td>{app.locationName}</td>
                                 </tr>
                                 <tr>
                                     <th>Summary</th>

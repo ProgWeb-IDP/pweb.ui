@@ -34,17 +34,17 @@ class Administrators extends Component {
                 <div>
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
-                                <th>user Id</th>
-                                <th>firstName</th>
-                                <th>lastName</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Phone number</th>
                             </tr>
                         <tbody>
                             {
                                 administrators.map(admin =>
                                     <tr>
-                                        <td>{admin.userId}</td>
                                         <td>{admin.firstName}</td>
                                         <td>{admin.lastName}</td>
+                                        <td>{admin.phoneNumber}</td>
                                     </tr>
                                     )
                             }

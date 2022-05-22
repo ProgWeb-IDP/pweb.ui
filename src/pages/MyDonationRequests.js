@@ -55,6 +55,7 @@ class MyDonationRequests extends Component {
         return (
             <div className='my_donation_requests'>
                 <div>
+                    
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
                                 <th>Request ID</th>
@@ -74,7 +75,7 @@ class MyDonationRequests extends Component {
                                         <td>{dr.quantityGathered}</td>
                                         <td>{dr.quantityNeeded}</td>
                                         <td>{dr.emissionDate}</td>
-                                        <td>{(dr.requestStatus == 1 ? "Waiting for approval" :(dr.requestStatus == 0 ? "Declined" : (dr.requestStatus == 2 ? "Active" : "Goal achieved")))}</td>
+                                        <td>{(dr.requestStatus === 1 ? "Waiting for approval" :(dr.requestStatus === 0 ? "Declined" : (dr.requestStatus === 2 ? "Active" : "Goal achieved")))}</td>
                                         <td>
                                             <Button className="mr-2" variant="info" size="sm" onClick={() =><Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}></Link> }>
                                             <Link to={'/volunteer_view_donation_request/' + dr.donationRequestId}>View details</Link>
@@ -85,6 +86,7 @@ class MyDonationRequests extends Component {
                             }
                         </tbody>
                     </Table>
+
                     <ButtonToolbar>
                         <Button variant='primary' onClick={() => this.setState({createModalShow:true})}>
                              Create new donation request

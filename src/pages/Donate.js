@@ -8,6 +8,7 @@ class Donate extends Component {
     constructor(props) {
         super(props)
         this.state={donationRequests:[], myDonations:[]}
+        this.flag = 0;
         const {user} = this.props.auth0;
         this.account = null;
         fetch(process.env.REACT_APP_API + 'auth', {
@@ -23,24 +24,24 @@ class Donate extends Component {
         .then(result => result.json())
         .then((result) => {
             this.account = result;
-            console.log(this.account);
         });
         setTimeout(() => this.refreshList(), 200);
     }
 
     refreshList(){
-        fetch(process.env.REACT_APP_API + 'donate')
-        .then(response => response.json())
-        .then(data => {
-            this.setState({donationRequests:data})
-        });
-        if(this.account != null)
+        if(this.account != null && this.flag == 0)
         {
+            fetch(process.env.REACT_APP_API + 'donate')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({donationRequests:data})
+            });
             fetch(process.env.REACT_APP_API + 'userdonations/' + this.account[0].userId)
             .then(response => response.json())
             .then(data => {
                 this.setState({myDonations:data})
             });
+            this.flag = 1;
         }
     }
 

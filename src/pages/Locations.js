@@ -35,7 +35,6 @@ class Locations extends Component {
                     <Table className="mt-4" striped border hover size="sm">
                             <tr>
                                 <th>Location name</th>
-                                <th>Slots </th>
                                 <th>Options</th>
                             </tr>
                         <tbody>
@@ -43,8 +42,7 @@ class Locations extends Component {
                                 locations.map(location =>
                                     <tr>
                                         <td>{location.locationName}</td>
-                                        <td>{location.slots}</td>
-                                        <td>Edit / Delete</td>
+                                        <td>Delete</td>
                                     </tr>
                                     )
                             }
